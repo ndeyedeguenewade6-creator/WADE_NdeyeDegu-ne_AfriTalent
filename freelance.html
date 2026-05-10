@@ -3,20 +3,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AfriTalent-freelance</title>
-
-    <!-- Bootstrap 5 via CDN : feuille de style -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Votre feuille de style personnelle -->
+    <title>AfriTalent-Freelance</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
 
+    <!-- HEADER / NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm" id="mainNavbar">
+  <div class="container">
 
-    <!-- Le contenu de la page sera ajoute ici -->
-    <!-- Bootstrap 5 via CDN : script JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Votre script JavaScript -->
+    <!-- Logo -->
+    <a class="navbar-brand fw-bold text-primary" href="index.html">
+      AfriTalent
+    </a>
+    <img src="images/logo.jpg" alt=""   height="50" width="50">
+
+    <!-- Bouton menu mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Liens -->
+    <div class="collapse navbar-collapse" id="menuNavbar"> 
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="freelance.html">Freelances</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="tarifs.html">Tarifs</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">À propos</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+
+      </ul>
+
+      <!-- Bouton CTA -->
+      <a href="index.html" class="btn btn-primary ms-lg-3">
+        Rejoindre AfriTalent
+      </a>
+    </div>
+
+  </div>
+</nav>
+<main>
+    <div class="container py-5">
+    <h1 class="text-center mb-4">Nos Freelances</h1>
+    </div>
+    <!-- Barre de filtres -->
+    <div class="d-flex justify-content-center mb-5 gap-2" id="filter-bar">
+        <button class="btn btn-outline-primary active" data-filter="all">Tous</button>
+        <button class="btn btn-outline-primary" data-filter="dev">Développeur</button>
+        <button class="btn btn-outline-primary" data-filter="design">Designer</button>
+        <button class="btn btn-outline-primary" data-filter="marketing">Marketing</button>
+    </div>
+     <!-- Grille de profils (Responsive : 1 col mobile, 2 tablet, 3 desktop) -->
+    <div id="profile-grid"></div>
+        
+        <!-- Profil 1 -->
+        <div class="col profile-card" data-category="dev">
+            <div class="card h-100 shadow-sm">
+                <img src="images/khadija-image.jpg" class="card-img-top" alt="Photo Khadija">
+                <div class="card-body">
+                    <h2>Khadija Fall</h2>
+                    <h3 class="card-subtitle mb-2 text-muted">Dev Fullstack</h3>
+                    <p>Experte React & Node.js, 5 ans d'expérience.</p>
+                    <div class="Montant">
+                        <span>20000Fcfa/h</span>
+                        <span class="rating"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span>
+                    </div> 
+                </div>
+                <div class="card-footer bg-white border-0">
+                    <button class="btn btn-primary w-100">Voir le profil</button>
+                </div>
+                 </div>
+        </div>
+            <!-- Profil 2 -->
+        <div class="col profile-card" data-category="design">
+            <div class="card h-100 shadow-sm">
+                <img src="images/sidi-images.jpg" class="card-img-top" alt="Photo de sidi">
+                <div class="card-body">
+                    <h4>Sidi sall</h4>
+                    <h5 class="card-subtitle mb-2 text-muted">UI/UX Designer</h5>
+                    <p>Création d'interfaces modernes et intuitives.</p>
+                    <div class="Montant">
+                        <span>15000Fcfa/h</span>
+                        <span class="rating"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span>
+                    </div>
+                </div>
+                <div class="card-footer bg-white border-0">
+                    <button class="btn btn-primary w-100">Voir le profil</button>
+                </div>
+            </div>
+        </div>
+                 <!-- Profil 3 -->
+        <div class="col profile-card" data-category="marketing">
+            <div class="card h-100 shadow-sm">
+                <img src="images/julianna-img.jpg" class="card-img-top" alt="Photo de julianna">
+                <div class="card-body">
+                    <h5>Julianna</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">SEO Expert</h6>
+                    <p>Boostez votre visibilité sur Google.</p>
+                    <div class="montant">
+                        <span>25000Fcfa/h</span>
+                        <span class="rating"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span>
+                    </div>
+                </div>
+                <div class="card-footer bg-white border-0">
+                    <button class="btn btn-primary w-100">Voir le profil</button>
+                </div>
+            </div>
+        </div>
+                     <!-- profile4 -->
+         <div class="col profile-card" data-category="dev">
+            <div class="card h-100 shadow-sm">
+                <img src="images/françois-image.jpg" class="card-img-top" alt="photo de François">
+                <div class="card-body">
+                    <h5>François</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Dev Backend</h6>
+                    <p>Python/Django.</p>
+                    <div class="Montant">
+                        <span class="fw-bold">17000Fcfa/h</span>
+                        <span class="rating"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span>
+                    </div>
+                </div>
+                <div class="card-footer bg-white border-0">
+                    <button class="btn btn-primary w-100">Voir le profil</button>
+                </div>
+            </div>
+        </div>
+                <!-- profile5 -->
+         <div class="col profile-card" data-category="design">
+            <div class="card h-100 shadow-sm">
+                <img src="images/eva-image.jpg" class="card-img-top" alt="photo de Eva">
+                <div class="card-body">
+                    <h5>Eva</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Illustratrice</h6>
+                    <p>Graphisme vectoriel.</p>
+                    <div class="Montant">
+                        <span class="fw-bold">10000Fcfa/h</span>
+                        <span class="rating"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span>
+                    </div>
+                </div>
+                <div class="card-footer bg-white border-0">
+                    <button class="btn btn-primary w-100">Voir le profil</button>
+                </div>
+            </div>
+        </div>
+                    <!-- profile6 -->
+        <div class="col profile-card" data-category="marketing">
+            <div class="card h-100 shadow-sm">
+                <img src="images/thomas-image.jpg" class="card-img-top" alt="photo de thomas">
+                <div class="card-body">
+                    <h5>Thomas</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Community Manager</h6>
+                    <p>Stratégie réseaux sociaux.</p>
+                    <div class="Montant">
+                        <span class="fw-bold">5000Fcfa/h</span>
+                        <span class="rating"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span>
+                    </div>
+                </div>
+                <div class="card-footer bg-white border-0">
+                    <button class="btn btn-primary w-100">Voir le profil</button>
+                </div>
+            </div>
+        </div>
+                    <!-- profile7 -->
+         <div class="col profile-card" data-category="dev">
+            <div class="card h-100 shadow-sm">
+                <img src="images/moustapha-image.jpg" class="card-img-top" alt="photo de Moustapha">
+                <div class="card-body">
+                    <h5 class="card-title">Moustapha Tall</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Dev Mobile</h6>
+                    <p>Flutter & Swift.</p>
+                    <div class="Montant">
+                        <span class="fw-bold">40000Fcfa/h</span>
+                        <span class="rating"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span>
+                    </div>
+                </div>
+                <div class="card-footer bg-white border-0">
+                    <button class="btn btn-primary w-100">Voir le profil</button>
+                </div>
+            </div>
+        </div>
+                    <!-- profile8 -->
+         <div class="col profile-card" data-category="design">
+            <div class="card h-100 shadow-sm">
+                <img src="images/Aissatou-image.jpg" class="card-img-top" alt="photo de Aissatou">
+                <div class="card-body">
+                    <h5 class="card-title">Aissatou diedhiou</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Motion Designer</h6>
+                    <p>Animation 2D/3D.</p>
+                    <div class="Montant">
+                        <span class="fw-bold">25000Fcfa/h</span>
+                        <span class="rating"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span>
+                    </div>
+                </div>
+                <div class="card-footer bg-white border-0">
+                    <button class="btn btn-primary w-100">Voir le profil</button>
+                </div>
+            </div>
+        </div>  
+                    <!-- profile9 -->
+         <div class="col profile-card" data-category="marketing">
+            <div class="card h-100 shadow-sm">
+                <img src="images/sophie-image.jpg" class="card-img-top" alt="photo de sophie">
+                <div class="card-body">
+                    <h5 class="card-title">Sophie diop</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Copywriter</h6>
+                    <p>Rédaction web SEO.</p>
+                    <div class="Montant">
+                        <span class="fw-bold">15000Fcfa/h</span>
+                        <span class="rating"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span>
+                    </div>
+                </div>
+                <div class="card-footer bg-white border-0">
+                    <button class="btn btn-primary w-100">Voir le profil</button>
+                </div>
+            </div>
+        </div>
+    </main>
+        <!-- Footer -->
+             <footer>
+        
+            <div class="container F">
+                
+                    <!-- colonne 1:AfriTalent -->
+                    <div class="col-md-3">
+                        <img src="images/logo.jpg" alt=""  height="50" width="50">
+                        <h5 class="fw-bold">AfriTalent</h5>
+                        <p>Plateforme qui valorise les talents africains et connecte les opportinuités.</p>
+
+                    </div>
+                    <!-- Colonne 2: les liens utiles -->
+                    <div>
+                        <h5>les liens utiles</h5>
+                        <ul>
+                            <li><a href="index.html">Accueil</a></li>
+                            <li><a href="about.html">A propos</a></li>
+                            <li> <a href="freelance.html">freelances</a></li>
+                            <li><a href="contact.html">contact</a></li>
+
+                        </ul>
+
+                    </div>
+                    <!-- colonnes 3: Ressources   -->
+                    <div>
+                        <h5>Ressources</h5>
+                        <p></p>
+                        <ul class="list-utile">
+                            <li><a href="tarifs.html">FAQ</a></li>
+                            <li><a href="contact.html">Aide</a></li>
+                            <li><a href="contact.html">Support</a></li>
+                            <li><a href="#">Téléchargement</a></li>
+
+                        </ul>
+
+                    </div>
+                        <!-- colonne 4: Contact -->
+                         <div>
+                            <h5>contact</h5>
+                            <p>Email : contact@afritalent.com</p>
+                            <p><i class="bi bi-phone icon"></i> Tél : +221 33 845 45 45</p>
+
+                         </div>
+                </div>
+                 <!-- Reseaux sociaux -->
+                          <div>
+                            <a href="https://instagram.com" class="text light me-3"> <i class="bi bi-instagram"> </i></a>
+                            <a href="https://twitter.com" class="text light me-3"><i class=" bi bi-twitter"></i></a>
+                            <a href="https://facebook.com" class="text light me-3"><i class=" bi bi-facebook"></i></a>
+                            <a href="https://snapchat.com" class="text light me-3"><i class="bi bi-snapchat"></i></a>
+
+                          </div>
+                          <!-- Ligne de copyright -->
+       
+        <div>
+            <p>& copy; <span id="year"></span> AfriTalent. Tous droits réservés.</p>
+
+        </div>
+
+                
+</footer>
+       
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script> 
     <script src="js/main.js"></script>
 </body>
 </html>
