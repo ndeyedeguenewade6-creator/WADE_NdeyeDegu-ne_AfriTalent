@@ -1,4 +1,4 @@
-@import url('googleapis.com');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&family=Oswald:wght@400;500;700&display=swap');
 
         /* +6 variables */
 :root {
@@ -10,7 +10,7 @@
     --text-muted: #687182;
     /* Police */
   --font-headings:'Open sans',sans-serif;
-  --font-body:'Oswald';
+  --font-body:'Oswald'sans-serif;
     /* Espacement */
 --spacing-section:80px;
 --border-raduis-sm:8px;
@@ -18,7 +18,7 @@
 
 }
                 /* Reset     */
-*,*::before,*::before {
+*,*::before,*::after {
  box-sizing:border-box;
  margin: 0;
  padding: 0;
@@ -88,12 +88,281 @@ h1,h2,h3,h4,h5,h6 {
     box-shadow:0 4px 12px rgba(13, 110, 253, 0.25);
     transform: translateY(-1px);
 }
+ 
+                /* SECTION HERO */
+#hero {
+  padding: 100px 0 50px 0;
+  background-color: var(--accent-color);
+  text-align: center;
+   background-image:url(https://media.istockphoto.com/id/2195941735/fr/photo/hall-dentr%C3%A9e-dimmeuble-de-bureaux-daffaires-flou-ou-vue-int%C3%A9rieure-floue-de-lh%C3%B4tel-vers.webp?a=1&b=1&s=612x612&w=0&k=20&c=U4il7U3_2M5AgAvijhhnJNVal7rWabNkK82_x4DsGv8=);
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+#hero h1 {
+  font-family: var(--font-headings);
+  font-size: 3rem;
+  font-weight:800;
+  color: var(--accent-color);
+  margin-top: 15px;
+}
+#hero h1 + p {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  color: var(--primary-dark);
+  margin-bottom: 30px;
+}
+#hero .btn-light {
+  font-family:var(--font-body);
+  font-weight:600 ;
+  padding: 12px 26px;
+  margin:5px 10px;
+  border-radius:var(--border-radius-sm);
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+      /* Bouton1 */
+#hero .btn-light:first-of-type {
+  background-color: var(--primary-color);
+  color: white !important;
+}
+#hero .btn-light:first-of-type:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);   
+}
+    /* BOUTON2 */
+#hero .btn-light:last-of-type {
+  background-color: transparent;
+  color:var(--accent-color) !important;
+  border: 2px solid var(--accent-color);
+}
+#hero .btn-light:last-of-type:hover {
+  background-color: var(--accent-color);
+  color: white !important;
+  transform: translateY(-2px);
+}
+#hero .stats {
+  padding-top: 30px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+#hero .stats > div {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-transform:uppercase ;
+}
+#hero .counter {
+  display: block;
+  font-family: var(--font-headings);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary-color);
+}
+        /* BENTO GRID ET SERVICES */
+.grid.bento > .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 30px 0;
+}
+  /* STYLE POUR TOUTES LES CARTES */
+.grid.bento > .grid > div {
+  background: var(--accent-color);
+  padding: 25px;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease,box-shadow0.2s ease;
+}
+        /* ASYMETRIE */
+.grid.bento > .grid > div:nth-child(1){grid-row: span 2 ; }
+.grid.bento > .grid > div:nth-child(4){grid-column: span 2 ; }
+    /* EFFET HOVER SUR LE BENTO */
+.grid.bento > .grid > div:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+    /* STYLE DES ICONS ET TEXTE */
+.grid.bento .icon i { color: var(--primary-color); font-size: 1.3rem; }
+.grid.bento h3 { color: var(--primary-color); margin: 10px 0; }
+.grid.bento p { font-size: 0.95rem; color: var(--bg-light); }
 
+        /* CATEGORIES DE SERVICES */
+.services {
+  background-color: var(--bg-light); 
+  padding: 60px 0;
+}
 
+/* Grille aligner vos 6 cartes proprement */
+.services > div:last-of-type {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 20px; /
+  margin-top: 30px;
+}
 
+/* 2. Style de base de chaque Carte de Service */
+.services > div:last-of-type > div {
+  background-color: white;
+  padding: 25px;
+  border-radius: var(--border-radius-sm); 
+  border-left: 4px solid var(--accent-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);  
+  
+  /*  effets du survol */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+/* 3. LES 3 EFFETS HOVER (Transformation, Ombre, Couleur) */
+.services > div:last-of-type > div:hover {
+  transform: scale(1.03);                  
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06); 
+  border-left-color: var(--primary-color); 
+}
 
+/* 4. Style du titre et de l'icône  */
+.services .Service {
+  font-family: var(--font-headings);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent-color); 
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  margin-bottom: 5px;
+}
 
+/* Style de l'icône à l'intérieur du titre */
+.services .Service i {
+  color: var(--primary-color); 
+  font-size: 1.3rem
+}
+/* 5. Style du texte en dessous */
+.services div > p {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-muted); 
+  margin: 0;
+}
+      /* CAROUSEL TEMOIGNAGE */
+.temoignage {
+  padding: 50px 0;
+  background-color: var(--bg-light);
+}
+    /* LARGEUR DU CAROUSEL */
+.temoignage .carousel {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+      /* Cadrage pour les photos */
+.temoignage .carousel-item img {
+  height: 400px;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+    /* STYLE DU TEXTE */
+.temoignage .carousel-caption {
+  display: block !important;
+  border-radius: var(--border-raduis-sm);
+  padding: 20px;
+  bottom: 30px;
+  width: 85%;
+  margin: 0 auto;
+}
+      /* STYLE DE LA CITATION */
+.temoignage .carousel-caption p:first-of-type {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: white;
+  margin-bottom: 10px;
+}
+        /* H5 */
+.temoignage .carousel-caption h5 {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  color: white;
+  margin-bottom: 5px;
+}
+        /* La COULEUR DES ICONS */
+.temoignage .carousel-caption h5 i {
+  color: #ffc107 !important;
+  margin-left: 2px;
+}
+      /* PARAGRAPGHE ROLE */
+.temoignage .carousel-caption p:last-of-type {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+ 
+          /* CTA */
+section.CTA.text {
+  padding: 60px 20px;
+  background: var(--accent-color); 
+  text-align: center;
+}
+section.CTA.text h2 {
+  font-family: var(--font-headings);
+  font-size: 2.2rem;
+  color: white;
+  margin-bottom: 10px;
+}
+section.CTA.text p {
+  font-family: var(--font-body);
+  color: var(--text-muted);
+  margin-bottom: 25px;
+}
+section.CTA.text a {
+  font-family: var(--font-body);
+  background-color: var(--primary-color); 
+  color: white !important;
+  padding: 12px 32px;
+  border-radius: 50px; 
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+}
+section.CTA.text a:hover {
+  background-color: var(--text-muted);
+}
 
-
+              /* FOOTER */
+footer {
+  background-color: var(--accent-color) !important ;
+  color: #0b1a30 !important;
+  font-family: var(--font-body);
+}
+footer h4, footer h5 {
+  font-family: var(--font-headings);
+  color: var(--primary-color) ;
+  font-weight: 700;
+}
+footer img {
+  border-radius: var(--border-radius-sm);
+  object-fit: cover;
+}
+footer a, footer p {
+  transition: var(--primary-color) 0.2s ease ;
+ 
+  
+}
+      /* EFFET DE SURVOLS */
+footer a:hover, footer .social-icons a:hover {
+  color: var(--primary-color) !important;
+  
+}
+footer hr {
+  border-color: var(--primary-color) !important;
+}
 
 
