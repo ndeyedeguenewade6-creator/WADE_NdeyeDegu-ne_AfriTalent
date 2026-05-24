@@ -58,73 +58,97 @@
   </div>
 </nav>
         <!-- SECTION CONTACT -->
-         <section>
-
-    <div class="contact-form-wrapper">
-        <h2>Envoyez-nous un message</h2>
-        <div id="success-message" class="success-box" style="display:none;">
-            Merci ! Votre message a été envoyé avec succès.
-        </div>
-         </div>
-
-
-        <form id="contactForm">
-            <div class="form-group">
-                <label for="nom">Nom</label>
-                <input type="text" id="nom" name="nom">
-                <span class="error-msg" id="err-nom"></span>
-            </div>
-
-            <div class="form-group">
-                <label for="prenom">Prénom</label>
-                <input type="text" id="prenom" name="prenom">
-                <span class="error-msg" id="err-prenom"></span>
-            </div>
-             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="text" id="email" name="email">
-                <span class="error-msg" id="err-email"></span>
-            </div>
-
-            <div class="form-group">
-                <label for="sujet">Sujet</label>
-                <select id="sujet" name="sujet">
-                    <option value="">-- Choisissez un sujet --</option>
-                    <option value="support">Support Technique</option>
-                    <option value="commercial">Service Commercial</option>
-                    <option value="autre">Autre</option>
-                </select>
-                <span class="error-msg" id="err-sujet"></span>
-            </div>
-            <div class="form-group">
-                <label for="message">Message (min. 20 caractères)</label>
-                <textarea id="message" name="message" rows="5"></textarea>
-                <span class="error-msg" id="err-message"></span>
-                <div>
-                <button type="submit" class="btn-submit">Envoyer</button>
-                </div>
-                </div>
-                </form>
-
-              <section class="contact-container">
-                <div class="contact-info">
-                <h2>Nos Coordonnées</h2>
-                <p><strong>Email :</strong> contact@AfriTalent.com</p>
-                 <p><strong>Téléphone :</strong>+221 33 845 45 45</p>
-                  <p><strong>Adresse :</strong>Avenue, Leopold Sedar Senghor,Dakar/Senegal</p>
-         
+         <!-- Section Contact Globale -->
+<section class="contact-section py-5">
+  <div class="container">
+    <div class="row g-5">
         
-                  <div class="map-container">
-                  <!-- Iframe Google Maps fictive (DAKAR) -->
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.8526325166886!2d-17.43536512591839!3d14.66430327551589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec1724ac8000c5d%3A0x9b4678e626f8da4c!2sPalais%20de%20la%20R%C3%A9publique!5e0!3m2!1sfr!2ssn!4v1777882593360!5m2!1sfr!2ssn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            
-                  </div>
-                  </div>
-                  </section>
-                  </section>
+        <!-- COLONNE GAUCHE : LE FORMULAIRE (col-lg-7) -->
+        <div class="col-12 col-lg-7">
+            <div class="contact-form-wrapper p-4 p-md-5 shadow-sm bg-white">
+                <h2 class="mb-4 text-accent fw-bold">Envoyez-nous un message</h2>
+                
+                <!-- Message de succès masqué au démarrage -->
+                <div id="success-message" class="alert alert-success p-3 mb-4 custom-success-box" style="display:none;" role="alert">
+                    <i class="bi bi-check-circle-fill me-2"></i> Merci ! Votre message a été envoyé avec succès.
+                </div>
+
+                <form id="contactForm" novalidate>
+                    <div class="row g-3">
+                        <!-- Champ Nom -->
+                        <div class="col-12 col-md-6">
+                            <label for="nom" class="form-label">Nom</label>
+                            <input type="text" id="nom" class="form-control" placeholder="Votre nom">
+                            <span class="error-msg d-block text-danger mt-1 small" id="err-nom"></span>
+                        </div>
+
+                        <!-- Champ Prénom -->
+                        <div class="col-12 col-md-6">
+                            <label for="prenom" class="form-label">Prénom</label>
+                            <input type="text" id="prenom" class="form-control" placeholder="Votre prénom">
+                            <span class="error-msg d-block text-danger mt-1 small" id="err-prenom"></span>
+                        </div>
+
+                        <!-- Champ Email -->
+                        <div class="col-12">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-control" placeholder="exemple@domaine.com">
+                            <span class="error-msg d-block text-danger mt-1 small" id="err-email"></span>
+                        </div>
+
+                        <!-- Champ Sujet -->
+                        <div class="col-12">
+                            <label for="sujet" class="form-label">Sujet</label>
+                            <select id="sujet" class="form-select">
+                                <option value="">-- Choisissez un sujet --</option>
+                                <option value="support">Support Technique</option>
+                                <option value="commercial">Service Commercial</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                            <span class="error-msg d-block text-danger mt-1 small" id="err-sujet"></span>
+                        </div>
+
+                        <!-- Champ Message -->
+                        <div class="col-12">
+                            <label for="message" class="form-label">Message <span class="text-muted small">(min. 20 caractères)</span></label>
+                            <textarea id="message" class="form-control" rows="5" placeholder="Écrivez votre message ici..."></textarea>
+                            <span class="error-msg d-block text-danger mt-1 small" id="err-message"></span>
+                        </div>
+
+                        <!-- Bouton de validation -->
+                        <div class="col-12 mt-4">
+                            <button type="submit" class="btn btn-afri-submit py-3 w-100 fw-bold text-uppercase">Envoyer</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- COLONNE DROITE : LES COORDONNÉES & LA CARTE (col-lg-5) -->
+        <div class="col-12 col-lg-5">
+            <div class="contact-info-wrapper h-100 p-4 p-md-5 text-white shadow-sm rounded-3">
+                <h2 class="mb-4 fw-bold text-white">Nos Coordonnées</h2>
+                
+                <div class="mb-4 contact-details-list">
+                    <p class="mb-3"><i class="bi bi-envelope-fill text-orange me-3"></i><strong>Email :</strong> contact@AfriTalent.com</p>
+                    <p class="mb-3"><i class="bi bi-telephone-fill text-orange me-3"></i><strong>Téléphone :</strong> +221 33 845 45 45</p>
+                    <p class="mb-4"><i class="bi bi-geo-alt-fill text-orange me-3"></i><strong>Adresse :</strong> Avenue Léopold Sédar Senghor, Dakar, Sénégal</p>
+                </div>
+         
+                <!-- Conteneur Responsive de la Carte Google Maps -->
+                <div class="map-responsive-container shadow-sm">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.8526325166886!2d-17.43536512591839!3d14.66430327551589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec1724ac8000c5d%3A0x9b4678e626f8da4c!2sPalais%20de%20la%20R%C3%A9publique!5e0!3m2!1sfr!2ssn!4v1777882593360!5m2!1sfr!2ssn" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+
+    </div>
+  </div>
+</section>
+
 
                   <!-- FOOTER -->
-<footer class="bg-dark text-light pt-5 pb-3">
+<footer class="text-light pt-5 pb-3">
   <div class="container">
     <div class="row">
 

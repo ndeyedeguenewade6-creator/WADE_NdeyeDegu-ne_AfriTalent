@@ -60,186 +60,157 @@
 </nav>
 <main>
             <!-- SECTION FREELANCE -->
-  <section>           
-    <div class="container py-5">
-    <h1 class="text-center mb-4">Nos Freelances</h1>
-    </div>
+  <section class="freelance-section py-5">
+    <div class="container my-5">
+    <h1 class="text-center mb-5">Nos Freelances Experts</h1>
+
     <!-- Barre de filtres -->
-    <div class="d-flex justify-content-center mb-5 gap-2" id="filter-bar">
-        <button class="btn btn-outline-primary active" data-filter="all">Tous</button>
-        <button class="btn btn-outline-primary" data-filter="dev">Développeur</button>
-        <button class="btn btn-outline-primary" data-filter="design">Designer</button>
-        <button class="btn btn-outline-primary" data-filter="marketing">Marketing</button>
+    <div class="row mb-4">
+        <div class="col-12 text-center">
+            <div class="btn-group" role="group" aria-label="Filtres de catégories">
+                <button type="button" class="btn btn-outline-primary active" data-filter="all">Tous</button>
+                <button type="button" class="btn btn-outline-primary" data-filter="web">Web Dev</button>
+                <button type="button" class="btn btn-outline-primary" data-filter="design">Design</button>
+                <button type="button" class="btn btn-outline-primary" data-filter="marketing">Marketing</button>
+            </div>
+        </div>
     </div>
-     <!-- Grille de profils (Responsive : 1 col mobile, 2 tablet, 3 desktop) -->
-    <div id="profile-grid"></div>
+
+    
+     <!-- Grille de profils (Responsive : 1 col mobile, 2 tablet, 3 desktop) --
+         <!-- Grille de profils -->
+    <div class="row g-4" id="freelance-grid">
         
-        <!-- Profil 1 -->
-        <div class="col profile-card" data-category="dev">
-            <div class="card h-100 shadow-sm">
-                <img src="images/khadija-image.jpg" class="card-img-top" alt="Photo Khadija">
+        <!-- Freelance 1 -->
+        <div class="col-12 col-md-6 col-lg-4 freelance-card" data-category="web">
+            <div class="card h-100 profile-card">
+                <img src="images/khadija-image.jpg" class="card-img-top" alt="Photo Sophie">
                 <div class="card-body">
-                    <h2>Khadija Fall</h2>
-                    <h3 class="card-subtitle mb-2 text-muted">Dev Fullstack</h3>
-                    <p>Experte React & Node.js, 5 ans d'expérience.</p>
-                    <div class="Montant">
-                        <span>20000Fcfa/h</span>
-                        <span class="rating"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span>
-                    </div> 
-                </div>
-                <div class="card-footer bg-white border-0">
-                    <button class="btn btn-primary w-100">Voir le profil</button>
-                </div>
-                 </div>
-        </div>
-            <!-- Profil 2 -->
-        <div class="col profile-card" data-category="design">
-            <div class="card h-100 shadow-sm">
-                <img src="images/sidi-images.jpg" class="card-img-top" alt="Photo de sidi">
-                <div class="card-body">
-                    <h4>Sidi sall</h4>
-                    <h5 class="card-subtitle mb-2 text-muted">UI/UX Designer</h5>
-                    <p>Création d'interfaces modernes et intuitives.</p>
-                    <div class="Montant">
-                        <span>15000Fcfa/h</span>
-                        <span class="rating"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span>
-                    </div>
-                </div>
-                <div class="card-footer bg-white border-0">
-                    <button class="btn btn-primary w-100">Voir le profil</button>
+                    <h5>Khadija Fall</h5>
+                    <h6 class="card-subtitle">Développeuse Web</h6>
+                    <p class="card-text">Spécialiste React & Node.js, 5 ans d'expérience dans les applis SaaS.</p>
+                    <div class="mb-2"><span class="star"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span> 5/5</div>
+                    <p class="card-text fw-bold">15000fcfa/heure</p>
+                    <a href="#" class="btn btn-primary w-100">Voir le profil</a>
                 </div>
             </div>
         </div>
-                 <!-- Profil 3 -->
-        <div class="col profile-card" data-category="marketing">
-            <div class="card h-100 shadow-sm">
-                <img src="images/julianna-img.jpg" class="card-img-top" alt="Photo de julianna">
+
+        <!-- Freelance 2 -->
+        <div class="col-12 col-md-6 col-lg-4 freelance-card" data-category="design">
+            <div class="card h-100 profile-card">
+                <img src="images/sidi-images.jpg" class="card-img-top" alt="Photo Marc">
                 <div class="card-body">
-                    <h5>Julianna</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">SEO Expert</h6>
-                    <p>Boostez votre visibilité sur Google.</p>
-                    <div class="montant">
-                        <span>25000Fcfa/h</span>
-                        <span class="rating"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span>
-                    </div>
-                </div>
-                <div class="card-footer bg-white border-0">
-                    <button class="btn btn-primary w-100">Voir le profil</button>
+                    <h5>Sidy Sall</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">UI/UX Designer</h6>
+                    <p>Design d'interfaces mobiles et web modernes. Passionné par l'UX.</p>
+                    <div class="mb-2"><span class="star"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span> 4/5</div>
+                    <p class="card-text fw-bold">10000fcfa/heure</p>
+                    <a href="#" class="btn btn-primary w-100">Voir le profil</a>
                 </div>
             </div>
         </div>
-                     <!-- profile4 -->
-         <div class="col profile-card" data-category="dev">
-            <div class="card h-100 shadow-sm">
-                <img src="images/françois-image.jpg" class="card-img-top" alt="photo de François">
+
+        <!-- Freelance 3 -->
+        <div class="col-12 col-md-6 col-lg-4 freelance-card" data-category="marketing">
+            <div class="card h-100 profile-card">
+                <img src="images/julianna-img.jpg" class="card-img-top" alt="Photo Julie">
                 <div class="card-body">
-                    <h5>François</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Dev Backend</h6>
-                    <p>Python/Django.</p>
-                    <div class="Montant">
-                        <span class="fw-bold">17000Fcfa/h</span>
-                        <span class="rating"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span>
-                    </div>
+                    <h5>Juliana Leroy</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Expert SEO/SEA</h6>
+                    <p>Boostez votre visibilité sur Google avec des stratégies data-driven.</p>
+                    <div class="mb-2"><span class="star"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span> 5/5</div>
+                    <p class="card-text fw-bold">20000fcfa/heure</p>
+                    <a href="#" class="btn btn-primary w-100">Voir le profil</a>
                 </div>
-                <div class="card-footer bg-white border-0">
-                    <button class="btn btn-primary w-100">Voir le profil</button>
+                </div>
+        </div>
+          <div class="col-12 col-md-6 col-lg-4 freelance-card" data-category="web">
+            <div class="card h-100 profile-card">
+                <img src="images/thomas-image.jpg" class="card-img-top" alt="Photo Tom">
+                <div class="card-body">
+                    <h5>Thomas Petit</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Développeur Backend</h6>
+                    <p>Expert Python et bases de données haute performance.</p>
+                    <div class="mb-2"><span class="star"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span> 4/5</div>
+                    <p class="card-text fw-bold">35000fcfa/heure</p>
+                    <a href="#" class="btn btn-primary w-100">Voir le profil</a>
                 </div>
             </div>
         </div>
-                <!-- profile5 -->
-         <div class="col profile-card" data-category="design">
-            <div class="card h-100 shadow-sm">
-                <img src="images/eva-image.jpg" class="card-img-top" alt="photo de Eva">
+        <div class="col-12 col-md-6 col-lg-4 freelance-card" data-category="design">
+            <div class="card h-100 profile-card">
+                <img src="images/eva-image.jpg" class="card-img-top" alt="Photo Emma">
                 <div class="card-body">
-                    <h5>Eva</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Illustratrice</h6>
-                    <p>Graphisme vectoriel.</p>
-                    <div class="Montant">
-                        <span class="fw-bold">10000Fcfa/h</span>
-                        <span class="rating"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span>
-                    </div>
-                </div>
-                <div class="card-footer bg-white border-0">
-                    <button class="btn btn-primary w-100">Voir le profil</button>
-                </div>
-            </div>
-        </div>
-                    <!-- profile6 -->
-        <div class="col profile-card" data-category="marketing">
-            <div class="card h-100 shadow-sm">
-                <img src="images/thomas-image.jpg" class="card-img-top" alt="photo de thomas">
-                <div class="card-body">
-                    <h5>Thomas</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Community Manager</h6>
-                    <p>Stratégie réseaux sociaux.</p>
-                    <div class="Montant">
-                        <span class="fw-bold">5000Fcfa/h</span>
-                        <span class="rating"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span>
-                    </div>
-                </div>
-                <div class="card-footer bg-white border-0">
-                    <button class="btn btn-primary w-100">Voir le profil</button>
-                </div>
-            </div>
-        </div>
-                    <!-- profile7 -->
-         <div class="col profile-card" data-category="dev">
-            <div class="card h-100 shadow-sm">
-                <img src="images/moustapha-image.jpg" class="card-img-top" alt="photo de Moustapha">
-                <div class="card-body">
-                    <h5 class="card-title">Moustapha Tall</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Dev Mobile</h6>
-                    <p>Flutter & Swift.</p>
-                    <div class="Montant">
-                        <span class="fw-bold">40000Fcfa/h</span>
-                        <span class="rating"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span>
-                    </div>
-                </div>
-                <div class="card-footer bg-white border-0">
-                    <button class="btn btn-primary w-100">Voir le profil</button>
-                </div>
-            </div>
-        </div>
-                    <!-- profile8 -->
-         <div class="col profile-card" data-category="design">
-            <div class="card h-100 shadow-sm">
-                <img src="images/Aissatou-image.jpg" class="card-img-top" alt="photo de Aissatou">
-                <div class="card-body">
-                    <h5 class="card-title">Aissatou diedhiou</h5>
+                    <h5>Eva Wade</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Motion Designer</h6>
-                    <p>Animation 2D/3D.</p>
-                    <div class="Montant">
-                        <span class="fw-bold">25000Fcfa/h</span>
-                        <span class="rating"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span>
-                    </div>
-                </div>
-                <div class="card-footer bg-white border-0">
-                    <button class="btn btn-primary w-100">Voir le profil</button>
-                </div>
-            </div>
-        </div>  
-                    <!-- profile9 -->
-         <div class="col profile-card" data-category="marketing">
-            <div class="card h-100 shadow-sm">
-                <img src="images/sophie-image.jpg" class="card-img-top" alt="photo de sophie">
-                <div class="card-body">
-                    <h5 class="card-title">Sophie diop</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Copywriter</h6>
-                    <p>Rédaction web SEO.</p>
-                    <div class="Montant">
-                        <span class="fw-bold">15000Fcfa/h</span>
-                        <span class="rating"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span>
-                    </div>
-                </div>
-                <div class="card-footer bg-white border-0">
-                    <button class="btn btn-primary w-100">Voir le profil</button>
+                    <p>Création de vidéos explicatives et animations de marque.</p>
+                    <div class="mb-2"><span class="star"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span>5/5</div> 
+                    <p class="card-text fw-bold">12000fcfa/heure</p>
+                    <a href="#" class="btn btn-primary w-100">Voir le profil</a>
                 </div>
             </div>
         </div>
-        </section>
+        <div class="col-12 col-md-6 col-lg-4 freelance-card" data-category="marketing">
+            <div class="card h-100 profile-card">
+                <img src="images/françois-image.jpg" class="card-img-top" alt="Photo Lucas">
+                <div class="card-body">
+                    <h5>François Diouf</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Social Media Manager</h6>
+                    <p class="card-text">Stratégie réseaux sociaux, création de contenu & publicité.</p>
+                    <div class="mb-2"><span class="star"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span>4/5</div>
+                    <p class="card-text fw-bold">10000fcfa/heure</p>
+                    <a href="#" class="btn btn-primary w-100">Voir le profil</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 freelance-card" data-category="web">
+            <div class="card h-100 profile-card">
+                <img src="images/sophie-image.jpg" class="card-img-top" alt="Photo Chloé">
+                <div class="card-body">
+                    <h5>Sophie Diop</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Développeuse Fullstack</h6>
+                     <p>Spécialiste Laravel et Vue.js, créatrice d'applications robustes.</p>
+                    <div class="mb-2"><span class="star"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span> 5/5</div>
+                    <p class="card-text fw-bold">25000fcfa/heure</p>
+                    <a href="#" class="btn btn-primary w-100">Voir le profil</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 freelance-card" data-category="design">
+            <div class="card h-100 profile-card">
+                <img src="images/moustapha-image.jpg" class="card-img-top" alt="Photo Hugo">
+                <div class="card-body">
+                    <h5>Moustapha Tall</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Illustrateur 3D</h6>
+                    <p>Modélisation 3D pour produits et jeux vidéo.</p>
+                    <div class="mb-2"><span class="star"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span> 4/5</div>
+                    <p class="card-text fw-bold">12000fcfa/heure</p>
+                    <a href="#" class="btn btn-primary w-100">Voir le profil</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 freelance-card" data-category="marketing">
+            <div class="card h-100 profile-card">
+                <img src="images/Aissatou-image.jpg" class="card-img-top" alt="Photo Eva">
+                <div class="card-body">
+                    <h5>Aissatou Diedhiou</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Copywriter</h6>
+                    <p>Rédaction web persuasive, SEO et newsletters.</p>
+                    <div class="mb-2"><span class="star"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span> 5/5</div>
+                    <p class="card-text fw-bold">11000fcfa/heure</p>
+                    <a href="#" class="btn btn-primary w-100">Voir le profil</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</section>
+
     </main>
        <!-- FOOTER -->
-<footer class="bg-dark text-light pt-5 pb-3">
+<footer class="text-light pt-5 pb-3">
   <div class="container">
     <div class="row">
 

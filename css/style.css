@@ -10,7 +10,7 @@
     --text-muted: #687182;
     /* Police */
   --font-headings:'Open sans',sans-serif;
-  --font-body:'Oswald'sans-serif;
+  --font-body:'Oswald',sans-serif;
     /* Espacement */
 --spacing-section:80px;
 --border-raduis-sm:8px;
@@ -38,7 +38,7 @@ h1,h2,h3,h4,h5,h6 {
      font-weight:700 ;
 }
         /* Barre de navigation */
-#mainNavbar {
+#mainNavbar { 
     background-color:white;
     backdrop-filter: blur(8px);
     transition:all 0.3s ease;
@@ -52,7 +52,7 @@ h1,h2,h3,h4,h5,h6 {
 .navbar-brand {
     font-family: var(--font-headings);
     font-weight: 800;
-    color: var(--primary-color) !important;
+    color: var(--primary-color) !important;  
     font-size: 1.5rem;
 }
         /* image */
@@ -92,24 +92,25 @@ h1,h2,h3,h4,h5,h6 {
                 /* SECTION HERO */
 #hero {
   padding: 100px 0 50px 0;
-  background-color: var(--accent-color);
+  background-color: var(--accent-color);  
   text-align: center;
-   background-image:url(https://media.istockphoto.com/id/2195941735/fr/photo/hall-dentr%C3%A9e-dimmeuble-de-bureaux-daffaires-flou-ou-vue-int%C3%A9rieure-floue-de-lh%C3%B4tel-vers.webp?a=1&b=1&s=612x612&w=0&k=20&c=U4il7U3_2M5AgAvijhhnJNVal7rWabNkK82_x4DsGv8=);
+  background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://images.unsplash.com/photo-1625838144804-300f3907c110?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA1fHxJTUFHRSUyMFVOJTIwUEVVJTIwRkxPVUUlMjBwb3VyJTIwZm9uZCUyMGFwcGxpY2F0aW9uJTIwcXVpJTIwbW9udHJlJTIwdW4lMjBkZXZlbG9wcGV1cnxlbnwwfHwwfHx8MA%3D%3D);
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
+  
 }
 #hero h1 {
   font-family: var(--font-headings);
   font-size: 3rem;
   font-weight:800;
-  color: var(--accent-color);
+  color: var(--primary-color);
   margin-top: 15px;
 }
 #hero h1 + p {
   font-family: var(--font-body);
   font-size: 1.25rem;
-  color: var(--primary-dark);
+  color: var(--text-dark);
   margin-bottom: 30px;
 }
 #hero .btn-light {
@@ -134,9 +135,11 @@ h1,h2,h3,h4,h5,h6 {
     /* BOUTON2 */
 #hero .btn-light:last-of-type {
   background-color: transparent;
-  color:var(--accent-color) !important;
+  color:var(--text-dark) !important;
   border: 2px solid var(--accent-color);
 }
+
+  
 #hero .btn-light:last-of-type:hover {
   background-color: var(--accent-color);
   color: white !important;
@@ -163,7 +166,12 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: 800;
   color: var(--primary-color);
 }
-        /* BENTO GRID ET SERVICES */
+
+      /* BENTO GRID ET SERVICES */
+.text {
+  text-align: center;
+}
+
 .grid.bento > .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -192,69 +200,70 @@ h1,h2,h3,h4,h5,h6 {
 .grid.bento p { font-size: 0.95rem; color: var(--bg-light); }
 
         /* CATEGORIES DE SERVICES */
+
 .services {
-  background-color: var(--bg-light); 
+  background-color: var(--primary-color);
   padding: 60px 0;
 }
 
-/* Grille aligner vos 6 cartes proprement */
-.services > div:last-of-type {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-  gap: 20px; /
-  margin-top: 30px;
+/* Style des cartes  */
+.services .border-start {
+  background-color: #ffffff !important;
+  border-left-color: var(--accent-color) !important; 
+  border-radius: var(--border-radius-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
 }
 
-/* 2. Style de base de chaque Carte de Service */
-.services > div:last-of-type > div {
-  background-color: white;
-  padding: 25px;
-  border-radius: var(--border-radius-sm); 
-  border-left: 4px solid var(--accent-color);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);  
-  
-  /*  effets du survol */
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-/* 3. LES 3 EFFETS HOVER (Transformation, Ombre, Couleur) */
-.services > div:last-of-type > div:hover {
-  transform: scale(1.03);                  
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06); 
-  border-left-color: var(--primary-color); 
-}
-
-/* 4. Style du titre et de l'icône  */
-.services .Service {
+/* Style du titre de la catégorie  */
+.services .border-start > div:first-of-type {
   font-family: var(--font-headings);
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--accent-color); 
+  color: var(--accent-color);
+  margin-bottom: 8px;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: 5px;
 }
 
-/* Style de l'icône à l'intérieur du titre */
-.services .Service i {
-  color: var(--primary-color); 
-  font-size: 1.3rem
+/* Style de l'icône Bootstrap */
+.services .border-start i {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
 }
-/* 5. Style du texte en dessous */
-.services div > p {
+
+/* Style du texte du nombre de freelances */
+.services .border-start p {
   font-family: var(--font-body);
   font-size: 0.9rem;
-  color: var(--text-muted); 
-  margin: 0;
+  color: var(--text-muted) !important;
 }
-      /* CAROUSEL TEMOIGNAGE */
+
+
+   /* LES 3 EFFETS AU SURVOL EXIGÉS (HOVER) */
+  
+.services .border-start:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08) !important;
+  border-left-color: var(--primary-color) !important; 
+}
+
+/*  animation de l'icône au survol de la carte */
+.services .border-start:hover i {
+  transform: scale(1.15);
+}
+            /* CAROUSEL TEMOIGNAGE */
 .temoignage {
   padding: 50px 0;
   background-color: var(--bg-light);
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
     /* LARGEUR DU CAROUSEL */
 .temoignage .carousel {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   border-radius: var(--border-radius-lg);
   overflow: hidden;
@@ -262,7 +271,7 @@ h1,h2,h3,h4,h5,h6 {
 }
       /* Cadrage pour les photos */
 .temoignage .carousel-item img {
-  height: 400px;
+  height: 600px;
   object-fit: cover;
   filter: brightness(0.5);
 }
@@ -288,7 +297,7 @@ h1,h2,h3,h4,h5,h6 {
   font-family: var(--font-body);
   font-size: 1.25rem;
   color: white;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
         /* La COULEUR DES ICONS */
 .temoignage .carousel-caption h5 i {
@@ -304,12 +313,13 @@ h1,h2,h3,h4,h5,h6 {
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
- 
-          /* CTA */
+
+ /* CTA */
 section.CTA.text {
   padding: 60px 20px;
   background: var(--accent-color); 
   text-align: center;
+  margin-bottom: 50px;
 }
 section.CTA.text h2 {
   font-family: var(--font-headings);
@@ -341,6 +351,7 @@ footer {
   background-color: var(--accent-color) !important ;
   color: #0b1a30 !important;
   font-family: var(--font-body);
+   margin-top: 50px;
 }
 footer h4, footer h5 {
   font-family: var(--font-headings);
@@ -364,5 +375,681 @@ footer a:hover, footer .social-icons a:hover {
 footer hr {
   border-color: var(--primary-color) !important;
 }
+
+            /* PAGE FREELANCES */
+
+
+/*  boutons de filtre */
+.btn-group .btn-outline-primary {
+  color: var(--accent-color, #0b1a30);
+  border-color: var(--accent-color, #0b1a30);
+  font-family: var(--font-headings);
+  font-weight: 600;
+  transition: all 0.2s ease; 
+}
+
+/* Changement de couleur au passage de la souris (Hover) */
+.btn-group .btn-outline-primary:hover {
+  background-color: var(--primary-color, #ff7900) !important;
+  border-color: var(--primary-color, #ff7900) !important;
+  color: #ffffff !important; 
+}
+
+/* Couleur du bouton qui reste actif/sélectionné */
+.btn-group .btn-outline-primary.active {
+  background-color: var(--primary-color, #ff7900) !important;
+  border-color: var(--primary-color, #ff7900) !important;
+  color: #ffffff !important;
+}
+
+/* GRILLE DES PROFILS FREELANCES */
+.profile-card {
+    background-color: #e2e7e1  !important;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: var(--border-radius-lg, 12px);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}  
+
+/*  images de profil */
+ .profile-card .card-img-top {
+    height: 360px; 
+    object-fit: cover; 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+} 
+
+/* 3. Typographie à l'intérieur des cartes */
+ .profile-card .card-body {
+    padding: 1.5rem;
+} 
+
+ .profile-card h5 {
+    color: var(--accent-color, #0b1a30);
+    font-family: var(--font-headings);
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+} 
+
+ .profile-card .card-subtitle {
+    color: var(--primary-color, #ff7900) !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+} 
+
+ .profile-card .card-text {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: #495057;
+} 
+
+/* 4. Style des étoiles et tarifs */
+.profile-card .star i {
+    color: #ffc107;
+    margin-right: 2px;
+}
+
+.profile-card .fw-bold {
+    color: var(--accent-color, #0b1a30);
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+/* 5. Bouton personnalisé */
+.profile-card .btn-primary {
+    background-color: var(--accent-color, #0b1a30);
+    border-color: var(--accent-color, #0b1a30);
+    font-weight: 600;
+    padding: 10px;
+    border-radius: var(--border-radius-sm, 6px);
+    transition: background-color 0.2s ease;
+}
+
+.profile-card .btn-primary:hover {
+    background-color: var(--primary-color, #ff7900);
+    border-color: var(--primary-color, #ff7900);
+}
+
+
+   /* EFFETS AU SURVOL (HOVER EXIGÉ) */
+  
+.profile-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(11, 26, 48, 0.12); 
+    border-color: rgba(255, 121, 0, 0.3); 
+}
+
+            /* PAGE TARIFS  */
+
+body {
+  padding-top: 15px !important; 
+}
+.pricing-section {
+  background-color:#ffffff; 
+  padding-top: 150px !important; 
+  padding-bottom: 60px;
+  margin-bottom: 50px;
+  scroll-margin-top: 90px; 
+}
+
+/* Base de vos cartes */
+.pricing-card {
+  background-color: var(--accent-color) !important;
+  border: 1px solid rgba(11, 26, 48, 0.04) !important;
+  border-radius: 20px !important; 
+  box-shadow: 0 10px 30px rgba(11, 26, 48, 0.03) !important; 
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* En-tête  */
+.card-header-custom { 
+  padding: 30px 24px 10px 24px;
+  background: var(--text-dark) !important;
+  border: none;
+}
+.card-header-custom h2 {
+  font-family: var(--font-headings);
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.card-body-custom { padding: 10px 30px 35px 30px; }
+
+/* Montant des offres */
+.card-Montant {
+  font-family: var(--font-headings);
+  color: var(--primary-color);
+  font-size: 2.3rem;
+  font-weight: 800;
+}
+.card-Montant .text-G { font-size: 0.95rem; color: var(--text-muted); }
+
+/* Liste des options */
+.feature-list li {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 10px 0;
+  color:whitesmoke;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fa-check, .fa-circle-check {
+  color: #28a745; 
+}
+
+.fa-xmark, .fa-circle-xmark {
+  color: #dc3545; 
+}
+
+
+/* Boutons standards */
+.btn-outline-custom, .btn-afri-submit {
+  border-radius: 50px !important; 
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.23s ease;
+}
+.btn-outline-custom {
+  color: var(--accent-color);
+  border: 1px solid var(--text-muted);
+  background: transparent;
+}
+
+/* LA MISE EN AVANT DU PLAN PRO (RECOMMANDÉ) */
+.pricing-card.featured {
+  position: relative;
+  box-shadow: 0 20px 40px rgba(11, 26, 48, 0.06) !important;
+}
+/* Ajoute une belle ligne supérieure orange lumineuse */
+.pricing-card.featured::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 5px;
+  background: var(--primary-color, #ff7900);
+  border-radius: 20px 20px 0 0;
+}
+.badge-popular {
+  font-size: 0.75rem; background: rgba(255, 121, 0, 0.1);
+  color: var(--accent-color); padding: 4px 12px; border-radius: 50px;
+  font-weight: 700; margin-left: 6px;
+}
+.btn-custom-primary, .btn-afri-submit {
+  background: var(--primary-color);
+  border: none; border-radius: 50px !important; padding: 12px 24px; font-weight: 600;
+}
+
+/*EFFETS AU SURVOL */
+.pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(11, 26, 48, 0.08) !important; 
+  border-color: rgba(255, 121, 0, 0.2) !important;
+}
+.btn-outline-custom:hover {
+  background-color: var(--primary-color)!important ;
+  border-color: var(--accent-color) !important;
+  color: #ffffff !important;
+}
+.btn-custom-primary:hover, .btn-afri-submit:hover {
+  background-color: var(--primary-color) !important;
+  color:floralwhite !important;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(13, 110, 253, 0.25);
+}
+/* SECTION FAQ (ACCORDÉON BOOTSTRAP) */
+
+/* Titre de la FAQ */
+.text-Q {
+  font-family: var(--font-headings);
+  color: var(--primary-color);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Style général de l'accordéon */
+#accordionFAQ {
+  border-radius: var(--border-radius-lg, 12px);
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+/* Style de chaque élément de l'accordéon */
+#accordionFAQ .accordion-item {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  margin-bottom: 10px; 
+  border-radius: var(--border-radius-sm, 6px) !important;
+  overflow: hidden;
+}
+
+/* Style des boutons de questions (Fermés) */
+#accordionFAQ .accordion-button {
+  font-family: var(--font-headings);
+  font-weight: 600;
+  color: var(--text-dark);
+  background-color:var(--accent-color);
+  padding: 18px 24px;
+  transition: all 0.2s ease;
+}
+
+
+/* 1. Effet au passage de la souris (Hover) sur la question */
+#accordionFAQ .accordion-button:not(.disabled):hover {
+  color: var(--primary-color);
+  background-color: rgba(255, 121, 0, 0.02);
+}
+
+/* 2. État Ouvert (Quand la question est cliquée) */
+#accordionFAQ .accordion-button:not(.collapsed) {
+  color: #ffffff !important; 
+  background-color: var(--accent-color) !important; 
+  box-shadow: none; 
+}
+
+/* 3. Changement de couleur de la petite flèche de Bootstrap */
+#accordionFAQ .accordion-button::after {
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+/* Rend la flèche blanche lorsque l'accordéon est ouvert */
+#accordionFAQ .accordion-button:not(.collapsed)::after {
+  filter: brightness(0) invert(1);
+}
+
+/* Corps de la réponse */
+#accordionFAQ .accordion-body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: #495057;
+  background-color: #ffffff;
+  line-height: 1.6;
+  padding: 20px 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+
+            /* PAGE A PROPOS(ABOUT) */
+/* SECTION NOTRE HISTOIRE (STYLE GLOBAL) */
+
+.histoire-section {
+  background-color: var(--bg-light, #ffffff);
+  padding: 60px 0;
+  
+}
+
+/* Titre principal de la section */
+.histoire-title {
+  font-family: var(--font-headings);
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+
+/* Paragraphes de texte */
+.histoire-text {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: #495057;
+  line-height: 1.7;
+}
+
+/* Conteneur d'image masqué*/
+.histoire-img-container {
+  border-radius: var(--border-radius-lg, 12px);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(11, 26, 48, 0.1);
+  
+}
+
+/* Image fluide */
+.histoire-img-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease; 
+  
+}
+
+/* EFFET DE SURVOL CSS EXIGÉ (HOVER VISUE) */
+.histoire-img-container:hover img {
+  transform: scale(1.05);   
+}
+
+/* SECTION NOS VALEURS (GRILLE BOOTSTRAP) */
+
+.valeurs-section {
+  background-color: rgba(0, 128, 0, 0.363);
+  padding: 60px 0;
+}
+
+/* Titre principal */
+.valeurs-main-title {
+  font-family: var(--font-headings);
+  color: var(--accent-color, #0b1a30);
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+
+/* Base de chaque bloc de valeur */
+.valeur-card {
+  background-color: transparent;
+  border-radius: var(--border-radius-lg, 12px);
+  border: 1px solid transparent;
+  transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Style de l'icône */
+.valeur-icon i {
+  color: var(--primary-color, #ff7900);
+  font-size: 2.5rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+/* Titres des valeurs (Innovation, Excellence, etc.) */
+.valeur-title {
+  font-family: var(--font-headings);
+  color: var(--accent-color, #0b1a30);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* Descriptifs sous les titres */
+.valeur-text {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: #687182;
+  line-height: 1.5;
+}
+
+/* EFFET DE SURVOL CSS EXIGÉ (HOVER VISUEL) */
+.valeur-card:hover {
+  background-color: rgba(255, 121, 0, 0.04); 
+  border-color: rgba(255, 121, 0, 0.15);
+  transform: translateY(-4px); 
+}
+
+/* Animation sur l'icône pendant le survol */
+.valeur-card:hover .valeur-icon i {
+  transform: scale(1.1); 
+}
+
+
+/* SECTION L'ÉQUIPE */
+
+.team-section {
+  background-color:#1e3d59;
+  padding: 60px 0;
+}
+
+/* Titre de section */
+.team-main-title {
+  font-family: var(--font-headings);
+  color: var(--accent-color, #0b1a30);
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+
+/* Style de base de chaque carte membre */
+.team-card {
+  background-color: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  border-radius: var(--border-radius-lg, 16px) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Uniformisation des avatars (Ronds et bordés) */
+.team-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255, 121, 0, 0.1); 
+  transition: border-color 0.3s ease;
+}
+
+/* Noms et Rôles */
+.team-name {
+  font-family: var(--font-headings);
+  color: var(--accent-color, #0b1a30);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.team-role {
+  font-family: var(--font-body);
+  color: var(--primary-color, #ff7900); 
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Liens réseaux sociaux */
+.team-socials a {
+  color: var(--text-muted, #687182);
+  font-size: 1.2rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+/* Hover individuel sur une icône sociale */
+.team-socials a:hover {
+  color: var(--accent-color, #0b1a30);
+  transform: scale(1.2);
+}
+
+/* EFFET DE SURVOL CSS EXIGÉ (HOVER DES CARTES)*/
+.team-card:hover {
+  transform: translateY(-8px); 
+  box-shadow: 0 15px 30px rgba(11, 26, 48, 0.1) !important; 
+  border-color: rgba(255, 121, 0, 0.25) !important; 
+}
+
+.team-card:hover .team-avatar {
+  border-color: var(--primary-color, #ff7900); 
+}
+
+
+/* SECTION CHIFFRES CLÉS (BENTO GRID RESPONSIVE) */
+
+.stats-bento-section {
+  background-color: var(--accent-color, #0b1a30); 
+  padding: 60px 0;
+}
+
+.bento-main-title {
+  font-family: var(--font-headings);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+
+/* Style commun à tous les pavés du Bento */
+.bento-item {
+  border-radius: var(--border-radius-lg, 24px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 140px; 
+}
+
+/* Couleurs spécifiques des blocs  */
+.item-projets { background-color: #1e3d59; }
+.item-pays    { background-color: var(--primary-color, #ff7900); } 
+.item-experts { background-color: #17b978; } 
+.item-users   { background-color: #438a5e; }
+
+/* Typographie des compteurs */
+.stat-counter {
+  font-family: var(--font-headings);
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 5px;
+}
+
+.text-dark-bento { color: var(--accent-color, #0b1a30) !important; }
+
+/* Libellés sous les chiffres */
+.bento-label {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* EFFET DE SURVOL CSS EXIGÉ (HOVER) */
+.bento-item:hover {
+  transform: scale(1.03); 
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+/* Configuration asymétrique des coordonnées de tuiles */
+  .item-projets      { grid-column: span 2; }
+  .item-satisfaction { grid-column: 4; grid-row: span 2; }
+  .item-users        { grid-column: span 2; }
+
+
+
+
+      /* PAGE CONTACT */
+body { background-color: #f4f6f9 !important; }
+
+.contact-section {
+  background-color: var(--primary-color) !important;
+   
+}
+
+.contact-section::before {
+  content: "";
+  display: block;
+  height: 100px; 
+  width: 100%;
+}
+
+
+.contact-form-wrapper {
+  border-radius: var(--border-radius-lg, 16px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.text-accent {
+  color: var(--accent-color, #0b1a30);
+}
+
+/* Design des inputs et selecteurs */
+.contact-section .form-control,
+.contact-section .form-select {
+  padding: 12px 16px;
+  font-family: var(--font-body);
+  border: 1px solid #ced4da;
+  border-radius: var(--border-radius-sm, 8px);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* EFFET INTERACTIF AU FOCUS  */
+.contact-section .form-control:focus,
+.contact-section .form-select:focus {
+  border-color: var(--primary-color, #ff7900) !important;
+  box-shadow: 0 0 0 0.25rem rgba(255, 121, 0, 0.15) !important;
+  outline: 0;
+}
+
+/* Messages d'erreurs */
+.error-msg {
+  font-size: 0.82rem;
+  font-weight: 500;
+  min-height: 18px;
+}
+
+/* Bouton soumission */
+.btn-afri-submit {
+  background-color: var(--primary-color, #ff7900);
+  color: #ffffff;
+  border: 2px solid var(--primary-color, #ff7900);
+  border-radius: 50px;
+  transition: all 0.2s ease;
+}
+
+.btn-afri-submit:hover {
+  background-color: var(--primary-dark, #1e2229);
+  border-color: var(--primary-dark, #1e2229);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Boîtier Coordonnées Droite */
+.contact-info-wrapper {
+  background-color: var(--accent-color, #0b1a30);
+  border-radius: var(--border-radius-lg, 16px);
+}
+
+.contact-details-list p {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+}
+
+.text-orange {
+  color: var(--primary-color, #ff7900);
+}
+
+/* Rendre l'iframe Google Maps 100% Flexible pour le mobile */
+.map-responsive-container {
+  border-radius: var(--border-radius-sm, 8px);
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+.map-responsive-container iframe {
+  display: block;
+}
+/* Supprime  tous les contrôles de carrousel */
+.carousel-control-prev, 
+.carousel-control-next,
+.prev, 
+.next, 
+.arrow-left, 
+.arrow-right {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+
+ /*  RÉINITIALISATION GLOBALE (À METTRE TOUT EN HAUT DU FICHIER) */
+*, *::before, *::after {
+  box-sizing: border-box; 
+  margin: 0;              
+  padding: 0;             
+}
+   /*  ADAPTATION MOBILE (À METTRE TOUT EN BAS DU FICHIER).  */
+@media (max-width: 767px) {
+  
+  /*  SUPERPOSITION  DES CONTENEURS PRINCIPAUX */
+  .grid, .grid.bento, [class*="tarif"], [class*="marche"] {
+    display: block !important;  
+    width: 100% !important;     
+    padding: 0 15px !important; 
+  }
+
+  /* 2. LARGEUR MAXIMALE POUR TOUS LES BLOCS ENFANTS DIRECTS */
+  .grid > *, [class*="tarif"] > *, [class*="marche"] > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 20px 0 !important; 
+  }
+
+  /* 3. SÉCURITÉ ABSOLUE pour empecher le debordement */
+  html, body, img {
+    max-width: 100% !important;
+    overflow-x: hidden !important; 
+  }
+}
+
+
+
+
 
 
