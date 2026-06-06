@@ -1048,7 +1048,90 @@ body { background-color: #f4f6f9 !important; }
   }
 }
 
+    /* CSS(commit 6) */
+/*  LE MODE SOMBRE POUR TOUTES LES PAGES  */
+html[data-theme="dark"], 
+[data-theme="dark"] body {
+  background-color: #0c0c0e !important; 
+}
 
+/* La navbar s'adapte aussi au fond noir */
+[data-theme="dark"] #mainNavbar {
+  background-color: #16161a !important; 
+}
+/* CONFIGURATION DU BOUTON (MODE CLAIR) */
+.btn-mode-visuel {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid #e0e0e0;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+/* LE SOLEIL EN MODE CLAIR */
+.icon-theme {
+  font-size: 18px;
+  color: #ffb300 !important; 
+  transition: transform 0.4s ease, color 0.3s ease;
+}
+.btn-mode-visuel:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+/*  CONFIGURATION DU BOUTON (MODE SOMBRE)  */
+[data-theme="dark"] .btn-mode-visuel {
+  background-color: #222222 !important;
+  border-color: #444444 !important;
+}
+
+/* LA LUNE EN MODE SOMBRE */
+[data-theme="dark"] .icon-theme {
+  color: #cccccc !important;
+  transform: rotate(360deg);  
+}
+/*  LA NAVBAR AU SCROLL (Shrink & Ombre) */
+#mainNavbar {
+  transition: padding 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#mainNavbar.scrolled {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/*  BOUTON RETOUR EN HAUT  */
+#back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  padding: 10px 15px;
+  font-size: 18px;
+  background-color: var(--text-muted);
+  color: white;
+  border: 1px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1050;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+/* Ajoute un espace de 15 pixels à droite du logo */
+.navbar-brand + img {
+  margin-right: 15px; 
+}
 
 
 
