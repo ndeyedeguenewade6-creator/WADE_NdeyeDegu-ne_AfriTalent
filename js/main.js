@@ -71,3 +71,73 @@ window.addEventListener('scroll', function() {
 boutonHaut.addEventListener('click', function() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  
+  //  ANIMATION DES COMPTEURS DE STATISTIQUES
+
+  const compteurs = document.querySelectorAll('.stat-counter');
+  
+  const animerCompteur = (compteur) => {
+    // Récupère la valeur finale 
+    const cible = parseInt(compteur.getAttribute('data-target'), 10);
+    const duree = 2000; 
+    const tempsDebut = performance.now(); 
+    
+    const actualiser = (tempsActuel) => {
+      //  Calcule le temps passé 
+      const tempsEcoule = tempsActuel - tempsDebut; 
+      
+      //  Calcule le pourcentage d'avancement 
+      const progression = Math.min(tempsEcoule / duree, 1); 
+      
+      //  Multiplie la cible par le pourcentage 
+      const chiffreActuel = Math.floor(progression * cible); 
+      
+      //  Affiche le chiffre sur la page
+      compteur.innerText = `+${chiffreActuel}`; 
+      
+      // Si les 2 secondes ne sont pas écoulées, on continue l'animation
+      if (progression < 1) {
+        requestAnimationFrame(actualiser);
+      }
+    };
+    
+    requestAnimationFrame(actualiser);
+  };
+
+  // Création de l'observateur pour les compteurs
+  const observateurCompteurs = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animerCompteur(entry.target);
+        observer.unobserve(entry.target); 
+      }
+    });
+  }, { threshold: 0.5 }); 
+
+  // Initialisation 
+  compteurs.forEach(compteur => {
+    compteur.innerText = "+0"; 
+    observateurCompteurs.observe(compteur);
+  });
+
+
+
+  //  (FADE-IN) DE LA SECTION
+  
+  const sectionsAanimer = document.querySelectorAll('.fade-in-section');
+
+  // Création de l'observateur pour le fade-in
+  const observateurSections = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target); 
+      }
+    });
+  }, { threshold: 0.15 }); 
+
+  sectionsAanimer.forEach(section => observateurSections.observe(section));
+});
+ 
