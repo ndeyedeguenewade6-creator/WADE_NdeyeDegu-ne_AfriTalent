@@ -141,3 +141,104 @@ document.addEventListener('DOMContentLoaded', () => {
   sectionsAanimer.forEach(section => observateurSections.observe(section));
 });
  
+        // FILTRAGE DYNAMIQUE(freelance)
+// Sélectionner les boutons et les cartes de freelances
+const filterButtons = document.querySelectorAll('[data-filter]');
+const freelanceCards = document.querySelectorAll('.freelance-card');
+
+// Écouter le clic 
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    
+    // Gérer les couleurs
+    document.querySelector('[data-filter].active').classList.remove('active');
+    button.classList.add('active');
+
+    // Récupérer la catégorie ciblée 
+    const selectedFilter = button.getAttribute('data-filter');
+
+    // Filtrer les cartes
+    freelanceCards.forEach(card => {
+      const cardCategory = card.getAttribute('data-category');
+
+      if (selectedFilter === 'all' || cardCategory === selectedFilter) {
+        card.classList.remove('d-none'); 
+      } else {
+        card.classList.add('d-none');    
+      }
+    });
+  });
+});
+
+        // FORMULAIRE DE CONTACT
+const form = document.getElementById('contactForm');
+const success = document.getElementById('success-message');
+
+form.addEventListener('submit', function(event) {
+  // empêcher le rechargement de la page
+  event.preventDefault();
+  
+  // principe que le formulaire est bon au début
+  let formulaireValide = true;
+
+  //  efface les anciens messages d'erreur et de succès
+  document.querySelectorAll('.error-msg').forEach(el => el.textContent = '');
+  success.style.display = 'none';
+
+  //  RÉCUPÉRATION DES VALEURS DES CHAMPS
+  const nom = document.getElementById('nom').value.trim();
+  const prenom = document.getElementById('prenom').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const sujet = document.getElementById('sujet').value;
+  const message = document.getElementById('message').value.trim();
+
+  //  VÉRIFICATION DU NOM
+  if (nom === '') {
+    document.getElementById('err-nom').textContent = "Le nom est obligatoire.";
+    formulaireValide = false;
+  } else if (nom.includes('0') || nom.includes('1') || nom.includes('2') || nom.includes('3') || nom.includes('4') || nom.includes('5') || nom.includes('6') || nom.includes('7') || nom.includes('8') || nom.includes('9')) {
+    document.getElementById('err-nom').textContent = "Le nom ne doit pas contenir de chiffres.";
+    formulaireValide = false;
+  }
+
+  //  VÉRIFICATION DU PRÉNOM
+  if (prenom === '') {
+    document.getElementById('err-prenom').textContent = "Le prénom est obligatoire.";
+    formulaireValide = false;
+  } else if (prenom.includes('0') || prenom.includes('1') || prenom.includes('2') || prenom.includes('3') || prenom.includes('4') || prenom.includes('5') || prenom.includes('6') || prenom.includes('7') || prenom.includes('8') || prenom.includes('9')) {
+    document.getElementById('err-prenom').textContent = "Le prénom ne doit pas contenir de chiffres.";
+    formulaireValide = false;
+  }
+
+  // 5. VÉRIFICATION DE L'EMAIL
+  if (email === '') {
+    document.getElementById('err-email').textContent = "L'email est obligatoire.";
+    formulaireValide = false;
+  } else if (!email.includes('@') || !email.includes('.')) {
+    document.getElementById('err-email').textContent = "L'adresse email n'est pas valide (il manque @ ou un point).";
+    formulaireValide = false;
+  }
+
+  // 6. VÉRIFICATION DU SUJET
+  if (sujet === '') {
+    document.getElementById('err-sujet').textContent = "Veuillez choisir un sujet dans la liste.";
+    formulaireValide = false;
+  }
+
+  // 7. VÉRIFICATION DU MESSAGE
+  if (message === '') {
+    document.getElementById('err-message').textContent = "Le message est obligatoire.";
+    formulaireValide = false;
+  } else if (message.length < 20) {
+    document.getElementById('err-message').textContent = "Le message est trop court (minimum 20 lettres).";
+    formulaireValide = false;
+  }
+
+  // AFFICHAGE DU MESSAGE AVEC SUCCES
+  if (formulaireValide === true) {
+    success.style.display = 'block';
+    form.reset(); // Vide le formulaire
+  }
+});
+
+        
