@@ -60,7 +60,7 @@ h1,h2,h3,h4,h5,h6 {
     border-radius: var(--border-radius-sm);
     object-fit: cover;
 }
-    /* Alignement et style du liens de navigtion */
+    /* Alignement et style du liens de navigation */
 #mainNavar .nav-link {
     color: var(--text-dark) !important;
     font-weight: 500;
@@ -153,7 +153,7 @@ h1,h2,h3,h4,h5,h6 {
   gap: 40px;
   flex-wrap: wrap;
 }
-#hero .stats > div {
+#hero .stats  div {
   font-family: var(--font-body);
   font-size: 0.9rem;
   color: var(--text-muted);
@@ -179,7 +179,7 @@ h1,h2,h3,h4,h5,h6 {
   padding: 30px 0;
 }
   /* STYLE POUR TOUTES LES CARTES */
-.grid.bento > .grid > div {
+.grid.bento  .grid  div {
   background: var(--accent-color);
   padding: 25px;
   border-radius: var(--border-radius-lg);
@@ -187,10 +187,10 @@ h1,h2,h3,h4,h5,h6 {
   transition: transform 0.2s ease,box-shadow0.2s ease;
 }
         /* ASYMETRIE */
-.grid.bento > .grid > div:nth-child(1){grid-row: span 2 ; }
-.grid.bento > .grid > div:nth-child(4){grid-column: span 2 ; }
+.grid.bento  .grid  div:nth-child(1){grid-row: span 2 ; }
+.grid.bento  .grid  div:nth-child(4){grid-column: span 2 ; }
     /* EFFET HOVER SUR LE BENTO */
-.grid.bento > .grid > div:hover {
+.grid.bento  .grid  div:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
@@ -215,7 +215,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 /* Style du titre de la catégorie  */
-.services .border-start > div:first-of-type {
+.services .border-start  div:first-of-type {
   font-family: var(--font-headings);
   font-size: 1.2rem;
   font-weight: 700;
@@ -377,8 +377,6 @@ footer hr {
 }
 
             /* PAGE FREELANCES */
-
-
 /*  boutons de filtre */
 .btn-group .btn-outline-primary {
   color: var(--accent-color, #0b1a30);
@@ -410,15 +408,13 @@ footer hr {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }  
-
 /*  images de profil */
  .profile-card .card-img-top {
     height: 360px; 
     object-fit: cover; 
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 } 
-
-/* 3. Typographie à l'intérieur des cartes */
+ /* 3. Typographie à l'intérieur des cartes */
  .profile-card .card-body {
     padding: 1.5rem;
 } 
@@ -455,7 +451,7 @@ footer hr {
     margin-top: 1rem;
 }
 
-/* 5. Bouton personnalisé */
+/*  Bouton personnalisé */
 .profile-card .btn-primary {
     background-color: var(--accent-color, #0b1a30);
     border-color: var(--accent-color, #0b1a30);
@@ -636,20 +632,20 @@ body {
 }
 
 
-/* 1. Effet au passage de la souris (Hover) sur la question */
+/*  Effet au passage de la souris (Hover) sur la question */
 #accordionFAQ .accordion-button:not(.disabled):hover {
   color: var(--primary-color);
   background-color: rgba(255, 121, 0, 0.02);
 }
 
-/* 2. État Ouvert (Quand la question est cliquée) */
+/*  État Ouvert (Quand la question est cliquée) */
 #accordionFAQ .accordion-button:not(.collapsed) {
   color: #ffffff !important; 
   background-color: var(--accent-color) !important; 
   box-shadow: none; 
 }
 
-/* 3. Changement de couleur de la petite flèche de Bootstrap */
+/* Changement de couleur de la petite flèche de Bootstrap */
 #accordionFAQ .accordion-button::after {
   transition: transform 0.2s ease, filter 0.2s ease;
 }
@@ -779,7 +775,6 @@ body {
 
 
 /* SECTION L'ÉQUIPE */
-
 .team-section {
   background-color:#1e3d59;
   padding: 60px 0;
@@ -850,8 +845,6 @@ body {
 .team-card:hover .team-avatar {
   border-color: var(--primary-color, #ff7900); 
 }
-
-
 /* SECTION CHIFFRES CLÉS (BENTO GRID RESPONSIVE) */
 
 .stats-bento-section {
@@ -911,10 +904,7 @@ body {
   .item-satisfaction { grid-column: 4; grid-row: span 2; }
   .item-users        { grid-column: span 2; }
 
-
-
-
-      /* PAGE CONTACT */
+           /* PAGE CONTACT */
 body { background-color: #f4f6f9 !important; }
 
 .contact-section {
@@ -1016,46 +1006,35 @@ body { background-color: #f4f6f9 !important; }
     visibility: hidden !important;
     opacity: 0 !important;
 }
-
-
- /*  RÉINITIALISATION GLOBALE (À METTRE TOUT EN HAUT DU FICHIER) */
-*, *::before, *::after {
-  box-sizing: border-box; 
-  margin: 0;              
-  padding: 0;             
-}
-   /*  ADAPTATION MOBILE (À METTRE TOUT EN BAS DU FICHIER).  */
+    /* MEDIA QUERIES */
+   /*  ADAPTATION MOBILE   */
 @media (max-width: 767px) {
-  
   /*  SUPERPOSITION  DES CONTENEURS PRINCIPAUX */
   .grid, .grid.bento, [class*="tarif"], [class*="marche"] {
     display: block !important;  
     width: 100% !important;     
     padding: 0 15px !important; 
   }
-
-  /* 2. LARGEUR MAXIMALE POUR TOUS LES BLOCS ENFANTS DIRECTS */
+  /*LARGEUR MAXIMALE POUR TOUS LES BLOCS ENFANTS DIRECTS */
   .grid > *, [class*="tarif"] > *, [class*="marche"] > * {
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 0 20px 0 !important; 
   }
-
-  /* 3. SÉCURITÉ ABSOLUE pour empecher le debordement */
+  /* SÉCURITÉ POUR LE DEBORDEMENT */
   html, body, img {
     max-width: 100% !important;
     overflow-x: hidden !important; 
   }
 }
-
-    /* CSS(commit 6) */
+      /* CSS(commit 6) */
 /*  LE MODE SOMBRE POUR TOUTES LES PAGES  */
 html[data-theme="dark"], 
 [data-theme="dark"] body {
   background-color: #0c0c0e !important; 
 }
 
-/* La navbar s'adapte aussi au fond noir */
+/* MODE SOMBRE POUR LE NAVBAR */
 [data-theme="dark"] #mainNavbar {
   background-color: #16161a !important; 
 }
@@ -1074,7 +1053,7 @@ html[data-theme="dark"],
   transition: all 0.3s ease;
 }
 
-/* LE SOLEIL EN MODE CLAIR */
+/* AFFICHAGE DU SOLEIL EN MODE CLAIR */
 .icon-theme {
   font-size: 18px;
   color: #ffb300 !important; 
@@ -1113,7 +1092,7 @@ html[data-theme="dark"],
   right: 25px;
   padding: 10px 15px;
   font-size: 18px;
-  background-color: var(--text-muted);
+  background-color:black;
   color: white;
   border: 1px solid white;
   border-radius: 50%;
@@ -1133,7 +1112,7 @@ html[data-theme="dark"],
   margin-right: 15px; 
 }
 
-          /* FADE IN SECTION (about/NOTRE HISTOIRE) */
+          /* FADE IN SECTION  */
 .fade-in-section {
   opacity: 0;
   transform: translateY(50px); 

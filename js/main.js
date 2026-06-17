@@ -210,7 +210,7 @@ form.addEventListener('submit', function(event) {
     formulaireValide = false;
   }
 
-  // 5. VÉRIFICATION DE L'EMAIL
+  //  VÉRIFICATION DE L'EMAIL
   if (email === '') {
     document.getElementById('err-email').textContent = "L'email est obligatoire.";
     formulaireValide = false;
@@ -219,13 +219,13 @@ form.addEventListener('submit', function(event) {
     formulaireValide = false;
   }
 
-  // 6. VÉRIFICATION DU SUJET
+  //  VÉRIFICATION DU SUJET
   if (sujet === '') {
     document.getElementById('err-sujet').textContent = "Veuillez choisir un sujet dans la liste.";
     formulaireValide = false;
   }
 
-  // 7. VÉRIFICATION DU MESSAGE
+  //  VÉRIFICATION DU MESSAGE
   if (message === '') {
     document.getElementById('err-message').textContent = "Le message est obligatoire.";
     formulaireValide = false;
